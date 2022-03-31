@@ -63,6 +63,32 @@ namespace HashTablesAndBinarySearchTree
                 this.RightTree.Display();
             }
         }
+        public bool Search(T element, BinarySearchTree<T> node)
+        {
+            bool result = false;
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.Nodedata.Equals(element))
+            {
+                Console.WriteLine("Founded Node is :" + node.Nodedata);
+                result = true;
+            }
+            else
+            {
+                Console.WriteLine("Current Node is :" + node.Nodedata);
+            }
+            if (element.CompareTo(node.Nodedata) < 0)
+            {
+                Search(element, node.LeftTree);
+            }
+            if (element.CompareTo(node.Nodedata) > 0)
+            {
+                Search(element, node.RightTree);
+            }
+            return result;
+        }
     }
 }
 

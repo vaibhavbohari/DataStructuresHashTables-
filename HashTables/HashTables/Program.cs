@@ -17,10 +17,13 @@ namespace HashTablesAndBinarySearchTree
             bst.Insert(45);
             bst.Insert(85);
             bst.Insert(77);
+            bst.Insert(63);
             bst.Insert(25);
             bst.Insert(64);
             bst.Display();
             bst.Getsize();
+            Console.WriteLine("------------------------");
+            bst.Search(63, bst);
         }
     }
 }
