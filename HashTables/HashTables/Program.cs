@@ -14,7 +14,13 @@ namespace HashTablesAndBinarySearchTree
             BinarySearchTree<int> bst = new BinarySearchTree<int>(56);
             bst.Insert(30);
             bst.Insert(70);
+            bst.Insert(45);
+            bst.Insert(85);
+            bst.Insert(77);
+            bst.Insert(25);
+            bst.Insert(64);
             bst.Display();
+            bst.Getsize();
         }
     }
 }

@@ -6,59 +6,60 @@ using System.Threading.Tasks;
 
 namespace HashTablesAndBinarySearchTree
 {
-    internal class BinarySearchTree<T> where T : IComparable<T>
+    public class BinarySearchTree<T> where T : IComparable
     {
-        public T NodeData { get; set; }
+        public T Nodedata { get; set; }
         public BinarySearchTree<T> LeftTree { get; set; }
         public BinarySearchTree<T> RightTree { get; set; }
-
-        public BinarySearchTree(T nodeData)
+        public BinarySearchTree(T Nodedata)
         {
-            this.NodeData = nodeData;
+            this.Nodedata = Nodedata;
             this.LeftTree = null;
             this.RightTree = null;
         }
-        int leftCount = 0, rightCount = 0;
-        bool result = false;
-        public void Insert(T item)
+        int LeftCount = 0;
+        int RightCount = 0;
+        public void Insert(T Value)
         {
-            T CurrentNodeValue = this.NodeData;
-            if ((CurrentNodeValue.CompareTo(item) > 0))
+            T Root = this.Nodedata;
+            if (Root.CompareTo(Value) > 0)
             {
                 if (this.LeftTree == null)
                 {
-                    this.LeftTree = new BinarySearchTree<T>(item);
+                    this.LeftTree = new BinarySearchTree<T>(Value);
                 }
                 else
                 {
-                    this.LeftTree.Insert(item);
+                    this.LeftTree.Insert(Value);
                 }
+                LeftCount += 1;
             }
             else
             {
                 if (this.RightTree == null)
                 {
-                    this.RightTree = new BinarySearchTree<T>(item);
+                    this.RightTree = new BinarySearchTree<T>(Value);
                 }
                 else
                 {
-                    this.RightTree.Insert(item);
+                    this.RightTree.Insert(Value);
                 }
-
+                RightCount += 1;
             }
-
+        }
+        public void Getsize()
+        {
+            Console.WriteLine("Binary Tree Size:" + (RightCount + LeftCount + 1));
         }
         public void Display()
         {
             if (this.LeftTree != null)
             {
-                this.leftCount++;
                 this.LeftTree.Display();
             }
-            Console.WriteLine(this.NodeData.ToString());
+            Console.WriteLine(this.Nodedata.ToString());
             if (this.RightTree != null)
             {
-                this.rightCount++;
                 this.RightTree.Display();
             }
         }
