@@ -10,20 +10,22 @@ namespace HashTablesAndBinarySearchTree
     {
         static void Main(string[] args)
         {
-           
-            BinarySearchTree<int> bst = new BinarySearchTree<int>(56);
-            bst.Insert(30);
-            bst.Insert(70);
-            bst.Insert(45);
-            bst.Insert(85);
-            bst.Insert(77);
-            bst.Insert(63);
-            bst.Insert(25);
-            bst.Insert(64);
-            bst.Display();
-            bst.Getsize();
-            Console.WriteLine("------------------------");
-            bst.Search(63, bst);
+
+            Console.WriteLine("Welcome To Hash Table Program");
+
+            MyMapNode<string, string> hash = new MyMapNode<string, string>(5);
+            hash.Add("0", "To");
+            hash.Add("1", "be");
+            hash.Add("2", "or");
+            hash.Add("3", "not");
+            hash.Add("4", "to");
+            hash.Add("5", "be");
+
+            string hash5 = hash.Get("5");
+            Console.WriteLine("5th index value:" + hash5);
+
+            string hash2 = hash.Get("2");
+            Console.WriteLine("2th index value:" + hash2);
         }
     }
 }
