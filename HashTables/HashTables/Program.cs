@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace HashTablesAndBinarySearchTree
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             MyMapNode<string, string> hash = new MyMapNode<string, string>(18);
-            
             hash.Add("0", "Paranoids");
             hash.Add("1", "are");
             hash.Add("2", "not");
@@ -31,6 +30,8 @@ namespace HashTablesAndBinarySearchTree
             hash.Add("16", "paranoid");
             hash.Add("17", "avoidable");
             hash.Add("18", "situations");
+
+            hash.Remove("17");
 
             string hash0 = hash.Get("0");
             Console.WriteLine("0th index value:" + hash0);
@@ -71,16 +72,11 @@ namespace HashTablesAndBinarySearchTree
             string hash18 = hash.Get("18");
             Console.WriteLine("18th index value:" + hash18);
 
-
-
-
-
-
-
-
-
         }
     }
 }
-        
+
+
+
+
 

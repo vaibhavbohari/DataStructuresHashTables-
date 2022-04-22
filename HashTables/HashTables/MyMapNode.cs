@@ -12,7 +12,7 @@ namespace HashTablesAndBinarySearchTree
         //passing the key value pair to the linked list
         private readonly LinkedList<KeyValue<K, V>>[] iteams;
 
-        /// constructor to initialize  
+        /// constructor to initialize
         public MyMapNode(int size)
         {
             this.size = size;
